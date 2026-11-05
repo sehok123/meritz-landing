@@ -1,0 +1,57 @@
+.mainFooter {
+  padding: 74px 0 80px 0;
+  background: #f9fafb;
+}
+.mainFooter .content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.mainFooter .content .text {
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 162.5% */
+  text-align: left;
+}
+.mainFooter .content .text strong {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.mainFooter .links {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+.mainFooter .links a {
+  width: 56px;
+}
+.mainFooter .links a img {
+  width: 100%;
+}
+
+@media screen and (max-width: 760px) {
+  .mainFooter {
+    padding: 56px 16px 25px 16px;
+  }
+  .mainFooter .content .text {
+    font-size: 10px;
+    line-height: 16px; /* 162.5% */
+  }
+  .mainFooter .content .text strong {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .mainFooter .content .links {
+    margin-top: 36px;
+    gap: 8px;
+  }
+  .mainFooter .content .links a {
+    width: 32px;
+  }
+}/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,119 @@
+<style>
+  /*브랜드페이지 탑헤더 커스텀*/
+  .col-md-12 {
+    max-width: 97%;
+  }
+  .header-search-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #masthead .col-md-8 {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  #masthead .col-md-8 ul {
+    margin-bottom: 0px;
+  }
+  #masthead .col-md-8 li {
+    display: inline-block;
+  }
+  #masthead .col-md-8 li a {
+    text-decoration: none;
+    color: #6b6d6f;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  #masthead .col-md-8 li a:hover {
+    background: #f0f0f0;
+    color: #ee3621;
+  }
+  .main-navigation.toggled .mobile-menu-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+      document.querySelector(".custom-logo-link").classList.add("logo-main");
+      document
+        .querySelectorAll(".custom-nav li a, .menu-item a")
+        .forEach((el) => {
+          const href = el.getAttribute("href");
+          // 조건별 추가
+          if (href === "https://meritzpartners.com/blog/")
+            return el.classList.add("custom-logo");
+          if (href.includes("/story/")) {
+            el.classList.add("menu-story");
+          } else if (href.includes("/event/")) {
+            el.classList.add("menu-event");
+          } else if (href.includes("/category/factcheck/")) {
+            el.classList.add("menu-factcheck");
+          } else if (href.includes("/category/interview/")) {
+            el.classList.add("menu-interview");
+          } else if (href.includes("/category/clip/")) {
+            el.classList.add("menu-clip");
+          } else if (href.includes("/category/guide/")) {
+            el.classList.add("menu-guide");
+          } else if (href.includes("/category/njob/")) {
+            el.classList.add("menu-njob");
+          } else if (href.includes("meritzpartners.com/")) {
+            el.classList.add("menu-main");
+          }
+        });
+    }, 1000);
+    var target = document.querySelector(
+      "#masthead > .container > .row > .col-md-8",
+    );
+    if (target) {
+      var nav = document.createElement("ul");
+      nav.className = "custom-nav";
+      nav.innerHTML = `
+<li><a href="https://meritzpartners.com/" class="menu-main" target="_blank" rel="noopener noreferrer">메리츠 파트너스</a></li>
+<li><a href="https://meritzpartners.com/story/" class="menu-story" target="_blank" rel="noopener noreferrer">스토리</a></li> 
+<li><a href="https://meritzpartners.com/event/" class="menu-event" target="_blank" rel="noopener noreferrer">이벤트</a></li> 
+`;
+      target.appendChild(nav);
+    }
+  });
+  window.addEventListener("click", function (e) {
+    const aTag = e.target.closest("a");
+    if (!aTag) return;
+    const href = aTag.href || "";
+    // menu-로 시작하거나 logo-main, 또는 blog 관련 링크를 포함하는 경우
+    const hasMenuClass =
+      Array.from(aTag.classList).some(
+        (cls) => cls.startsWith("menu-") || cls.startsWith("logo-main"),
+      ) ||
+      href.includes("3.38.128.211/blog") ||
+      href.includes("meritzpartners.com/blog");
+    if (!hasMenuClass) return;
+    e.preventDefault();
+    const currentUrl = new URL(window.location.href);
+    const advtVal = currentUrl.searchParams.get("advtMdiaDivVal");
+    const linkUrl = new URL(aTag.href, window.location.origin);
+    if (linkUrl.pathname === "/blog") {
+      linkUrl.pathname = "/blog/";
+    }
+    if (["event", "story", "main", "site", "main"].includes(advtVal)) {
+      window.location.href = linkUrl.toString();
+      return;
+    }
+    ["advtMdiaDivVal", "advtMdiaTpDivVal", "advtMdiaDtlDivVal"].forEach(
+      (key) => {
+        const val = currentUrl.searchParams.get(key);
+        if (val) linkUrl.searchParams.set(key, val);
+      },
+    );
+    window.location.href = linkUrl.toString();
+  });
+</script>

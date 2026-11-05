@@ -1,0 +1,59 @@
+.mainFooter {
+  padding: 74px 0 80px 0;
+  background: #f9fafb;
+  .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    .text {
+      display: flex;
+      flex-direction: column;
+      color: #000;
+      font-family: Pretendard;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 26px; /* 162.5% */
+      text-align: left;
+      strong {
+        display: block;
+        margin-bottom: 18px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  }
+  .links {
+    display: flex;
+    gap: 14px;
+    margin-top: 24px;
+    a {
+      width: 56px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .mainFooter {
+    padding: 56px 16px 25px 16px;
+    .content {
+      .text {
+        font-size: 10px;
+        line-height: 16px; /* 162.5% */
+        strong {
+          margin-bottom: 10px;
+          font-size: 14px;
+        }
+      }
+      .links {
+        margin-top: 36px;
+        gap: 8px;
+        a {
+          width: 32px;
+        }
+      }
+    }
+  }
+}

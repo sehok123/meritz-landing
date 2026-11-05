@@ -1,0 +1,466 @@
+/* BC_MP_DRAFT 스타일: 기본 규칙은 BC260331 style.css 그대로, 맨 아래 "캠페인 전용" 구역만 추가 */
+:root{
+  --red:#f40504; --red-soft:#ff908f; --red-a10:rgba(244,5,4,.06); --red-a25:rgba(244,5,4,.25);
+  --ink:#1a1a1a; --gray:#6c757d; --line:#dee2e6; --bg:#f9f9f9; --card:#ffffff; --soft-bg:#f8f9fa;
+  --shadow-btn:0 4px 6px -4px rgba(244,5,4,.4),0 10px 15px -3px rgba(244,5,4,.4);
+  --maxw:600px;
+}
+
+.wrapper {width: 100%; max-width: none !important; overflow: initial; background: #f9f9f9; display: block;}
+.wrapper.off {display: none;}
+.wrapper img {width: 100%;}
+* {font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;}
+.colorMain {color: #f40504;}
+.backgroundMain { background: #f40504; color: #ffffff;}
+br.mo{display: none;}
+.mb { display: flex; gap: 8px; border-radius: 500px; align-items: center; justify-content: center;}
+.section {padding: 0;}
+.btn {cursor: pointer;}
+.section .content { width: 100%; max-width: 1000px; margin: 0 auto; padding: 90px 40px; display: flex; flex-direction: column; gap: 30px; align-items: center;}
+
+/*section01*/
+.section01 .content {}
+.section01 .content .mb.mb-1 { background: #ff908f1a; color: #ff908f; padding: 8px 16px; font-weight: 500;}
+.section01 .content .mb.mb-1 span { width: 8px; height: 8px; background: #ff908f; border-radius: 50%; }
+.section .content .text-desc { font-size: 16px; font-weight: 500; color: #6c757d; line-height: 22px;}
+.section .content h1 { font-weight: 700; font-size: 32px; line-height: 42px; }
+.section01 .content .mb.mb-2 { background: #f405041a; color: #f40504; border: 1px solid #f40504; padding: 10px 20px; font-weight: 400; font-size: 18px;}
+.section01 .content .mb.mb-2 img { width: 16px; height: 16px; }
+.section01 .content .mb-10 {display: flex;gap: 8px;justify-content: center;align-items: center;font-size: 14px;font-weight: 400;color: #6c757d;}
+.section01 .content .mb-10 span { width: 4px; height: 4px; border-radius: 50%; background: #dee2e6; }
+.section01 .btn1 { padding: 16px 32px; gap: 8px; display: flex; align-items: center; justify-content: center; border-radius: 16px; }
+.section01 .btn1 img { width: 20px; height: 20px; }
+.section01 .icon { width: 90px; height: 90px; }
+.section01 .txt1 { display: flex; gap: 4px; font-size: 32px; line-height: 48px; font-weight: 700; width: 100%; justify-content: center; align-items: center; }
+.section01 .txt1 span.txtBox { display: flex; justify-content: center; align-items: center; padding: 3px 18px; gap: 10px; background: #ff4443; color: #fff; border-radius: 10px; }
+.section01 .maxWidth {max-width: 580px;}
+.section01 .txt2 { max-width: 580px; padding: 0 30px; font-size: 14px; line-height: 22px; text-align: left; width: 100%; color: rgba(0, 0, 0, 0.5); }
+@media all and (max-width: 480px){
+}
+/*section02*/
+.section.section02 .content {gap: 60px;}
+.section02 .mb-1 { display: flex; flex-direction: column; gap: 16px; align-items: center; width: 100%; }
+.section02 .mb-1 h2 { font-weight: 600; font-size: 21.8px; line-height: 32px; }
+.section02 .mb-1 p { font-weight: 500; font-size: 16px; line-height: 28px; color: #6c757d; }
+.section02 .mb-2 { display: flex; background: #ff908f1a; border-radius: 500px; color: #ff908f; padding: 10px 20px; gap: 8px; font-weight: 500; }
+.section02 .mb-2 span { width: 8px; height: 8px; background: #ff6b6b; border-radius: 50%; }
+.section02 .mb-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 24px; border-radius: 24px; height: 124px; align-items: center; width: 100%; }
+.section02 .mb-3 > div { display: flex; flex-direction: column; width: 100%; }
+.section02 .mb-3 > div > p:first-child { text-align: center; font-size: 22px; line-height: 32px; font-weight: 700; }
+.section02 .mb-3 > div > p:last-child { text-align: center; font-size: 14px; line-height: 22px; font-weight: 500; opacity: 0.5; }
+.section02 .reviews { display: flex; flex-wrap: wrap; gap: 24px; }
+.section02 .reviews > div { display: flex; flex-direction: column; gap: 16px; min-width: 280px; flex: 1; border-radius: 24px; padding: 24px; background: #ffffff; }
+.section02 .reviews > div > div:first-child { display: flex; gap: 12px; align-items: center; }
+.section02 .reviews > div > div:first-child > div.review-icon { width: 60px; height: 50px; padding: 5px 6px; }
+.section02 .reviews > div > div:first-child > div:last-child { display: flex; flex-direction: column; }
+.section02 .reviews > div > div:first-child > div:last-child > p { font-size: 16px; line-height: 28px; font-weight: 700; text-align: left; }
+.section02 .reviews > div > div:first-child > div:last-child > span { font-size: 14px; line-height: 22px; font-weight: 500; }
+.section02 .reviews > div > div:last-child { text-align: left; font-size: 16px; line-height: 26px; color: #495057; }
+.section02 .txt2 { max-width: 580px; padding: 0 30px; font-size: 14px; line-height: 22px; text-align: left; width: 100%; color: rgba(0, 0, 0, 0.5); text-align: center; }
+/*section03*/
+.section03 .content .text-desc { color: #ff908f; font-weight: 500; font-size: 16px; line-height: 26px; }
+.section03 h1 { font-weight: 700; font-size: 32px; line-height: 42px; }
+.section03 .text-body { font-weight: 500; font-size: 18px; line-height: 30px; text-align: center; vertical-align: middle; color: #6c757d; }
+.section03 .flex { display: flex; gap: 16px; flex-direction: column; }
+.section03 .btn2 { padding: 20px 40px; gap: 8px; display: flex; align-items: center; justify-content: center; border-radius: 16px; }
+.section03 .btn2 img { width: 20px; height: 20px; }
+.section03 .flex p { font-size: 14px; font-weight: 500; line-height: 22px; color: #6c757d; }
+.section03 .flex p span {font-weight: 700;}
+.section03 .content > div:last-child { max-width: 580px; width: 100%; display: flex; flex-direction: column; gap: 30px; }
+.section03 .content > div:last-child .mt-12 { width: 100%; display: flex; gap: 18px; padding: 18px 0; }
+.section03 .content > div:last-child .mt-12 > div { flex: 1; display: flex; flex-direction: column; gap: 18px; align-items: center; }
+.section03 .content > div:last-child .mt-12 > div > img {width: 60px;}
+.section03 .content > div:last-child .mt-12 > div > p { font-weight: 500; font-size: 14px; line-height: 22px; text-align: center; color: #1a1a1a; }
+.section03 .content > div:last-child > span { padding: 0 30px; font-size: 14px; line-height: 22px; color: rgba(0, 0, 0, 0.5); text-align: left; }
+
+.btn3 { display: flex; justify-content: center; padding: 20px 40px; gap: 8px; max-width: 920px; position: sticky; bottom: 30px; margin: 0 auto; font-weight: 700; font-size: 24px; line-height: 40px; border-radius: 18px; width: 100%; align-items: center; }
+.btn3 img { width: 27px; height: 27px; }
+/**/
+.formSection { display: none; background: #f8f9fa; }
+.formSection.on {display: block;}
+.formSection .header { display: flex; align-items: center; justify-content: start; height: 56px; width: 100%; padding: 0 10px; border-bottom: 1px solid #dee2e6; position: sticky; top: 0; left: 0; }
+.formSection .header img { width: 40px; height: 40px; cursor: pointer; }
+.formSection .step .content { max-width: 580px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 0 10px;}
+.formSection .step01 {padding: 120px 40px 0;}
+.formSection .step01 h2 { font-weight: 600; font-size: 22px; line-height: 32px; }
+.formSection .step01 p.txt1 { font-weight: 500; font-size: 16px; line-height: 26px; color: #6c757d; }
+.formSection .step01 .flex {max-width: 384px; width: 100%; display: flex; justify-content: center; align-items: center; justify-content: space-between; text-align: center; font-size: 18px; line-height: 24px; font-weight: 600;}
+.formSection .step01 .flex > span{width: 1px; height: 32px; background: #dee2e6;}
+.formSection .step01 .btn4 { display: flex; gap: 8px; padding: 16px 0; width: 100%; max-width: 384px; font-weight: 700; font-size: 16px; line-height: 28px; justify-content: center; align-items: center; border-radius: 16px; box-shadow:0px 4px 6px -4px #f4050440,0px 10px 15px -3px #f4050440;}
+.formSection .step01 .btn4 img { width: 20px; height: 20px; }
+.formSection .step01 p.txt2 { font-weight: 500; font-size: 14px; line-height: 22px; color: #6c757d; }
+.formSection .step01 .content > span { width: 100%; padding: 0px 10px; color: rgba(0, 0, 0, 0.5); font-weight: 400; font-size: 14px; line-height: 22px; text-align: left; }
+.formSection .step01.off {display: none;}
+
+.formSection .step02 { display: none; padding: 120px 40px 0; }
+  .formSection .step02:has(.p5.active){padding: 327px 35px 0;}
+.formSection .step02.active {display: block;}
+
+.formSection .step02 nav { display: flex; flex-direction: column; width: 100%; }
+.formSection .step02 nav.last {display: none;}
+.formSection .step02 nav .bg { width: 100%; height: 8px; background: #f0f0f0; border-radius: 5px; overflow: hidden; }
+.formSection .step02 nav .bg .percentBg { display: block; width: 20%; height: 100%; background: #f40504; transition: all .2s ease; }
+.formSection .step02 nav .count { display: flex; gap: 4px; justify-content: end; align-items: center; font-size: 14px; line-height: 32px; font-weight: 500; color: #6c757d; }
+.formSection .step02 .content .progress { display: none; flex-direction: column; gap: 30px; width: 100%; }
+.formSection .step02 .content .progress.active {display: flex;}
+.formSection .step02 .content .progress h2 { font-weight: 600; font-size: 26px; line-height: 32px; text-align: left; }
+.formSection .step02 .content .p1 .flex { display: flex; flex-direction: column; gap: 18px; }
+.formSection .step02 .content .p1 label { font-size: 18px; line-height: 1em; font-weight: 500; color: #1a1a1a; text-align: left; }
+.formSection .step02 .content .p1 .region { display: flex; gap: 12px; align-items: center; }
+.formSection .step02 .content .p1 .region select { height: 48px; padding: 0 12px; border-radius: 8px; background: #ffffff; flex: 1; }
+/*2단계*/
+.formSection .step02 .content .option-list { display: flex; flex-direction: column; gap: 30px; align-items: center; width: 100%; }
+.formSection .step02 .content .option-list li {width: 100%;}
+.formSection .step02 .content .option-list li label {cursor: pointer; display: flex; gap: 12px; align-items: center; padding: 20px; width: 100%; border-radius: 24px; color: #1a1a1a; font-size: 18px; line-height: 48px; font-weight: 500; justify-content: start; border: 2px solid transparent;}
+.formSection .step02 .content .option-list li label input { display: none; }
+.formSection .step02 .content .option-list li label:has(input[type="radio"]:checked) { background: #f405041a; border: 2px solid #f40504; color: #f40504;}
+.formSection .step02 .content .option-list li label span.icon { width: 50px; height: 50px; border-radius: 12px; background: #ffffff; display: flex; justify-content: center; align-items: center; font-size: 24px; line-height: 32px; font-weight: 600;}
+.formSection .step02 .content .option-list li label:has(input[type="radio"]:checked) span.icon {background: #f405041a;}
+.formSection .step02 .content .p5{position: relative;}
+.formSection .step02 .content .p5 .top{display: flex; flex-direction: column; gap: 30px; position: absolute; top: -120px; width: 100%; max-width: 580px; transform: translateY(-100%);}
+.formSection .step02 .content .p5 .top span{font-size: 14px; line-height: 22px; color: rgba(0,0,0,.5); padding: 0 30px; text-align: left;}
+.formSection .step02 .content .p5 .labelBox{display: flex; flex-direction: column; gap: 18px; width: 100%; align-items: start;}
+.formSection .step02 .content .p5 .labelBox label{font-weight: 500; font-size: 18px; line-height: 1em; color: #1a1a1a;}
+.formSection .step02 .content .p5 .labelBox input{height: 48px; padding: 0 12px; border-radius: 8px; background: #ffffff; width: 100%; font-size: 18px;}
+/* .formSection .step02 .content .p5 .allCheck{display: flex; gap: 8px; align-items: center; width: 100%; justify-content: start; flex-wrap: wrap;}
+.formSection .step02 .content .p5 .agreeItem{display: flex; gap: 8px; align-items: center;}
+.formSection .step02 .content .p5 .agreeItem input.box{position: relative; appearance: none; width: 24px; height: 24px; border-radius: 8px; background: transparent; border: 1px solid #dee2e6; cursor: pointer;}
+.formSection .step02 .content .p5 .agreeItem input.box:checked{background: #495057;}
+.formSection .step02 .content .p5 .agreeItem input.box:checked:after{content: ""; position: absolute; top: 39%; left: 50%; width: 12px; height: 6px; border-left: 2px solid #f8f9fa; border-bottom: 2px solid #f8f9fa; transform: translate(-50%, -50%) rotate(-45deg);}
+.formSection .step02 .content .p5 .agreeItem input.whole{appearance: none; width: 30px; height: 30px; background: url(../images/check_before.png) no-repeat center; background-size: contain; cursor: pointer;}
+.formSection .step02 .content .p5 .agreeItem input.whole:checked{background: url(../images/check_after.png) no-repeat center; background-size: contain;}
+.formSection .step02 .content .p5 .agreeItem input:checked + label{color: #1a1a1a; font-weight: 600;}
+.formSection .step02 .content .p5 .agreeItem label{font-size: 18px; line-height: 1em; font-weight: 500; color: #6C757D; text-align: left;}
+.formSection .step02 .content .p5 .agreeItem label span.infoText{ width: 100%; text-align: left; font-size: 15px; margin-top: 4px; color: #ee3823;}
+.formSection .step02 .content .p5 .allCheck p{font-size: 14px; line-height: 18px; color: #6c757d; text-align: left;}
+
+
+.formSection .step02 .content .p5 dl.agreeItem{flex-direction: column; width: 100%;}
+.formSection .step02 .content .p5 dl.agreeItem dt{width: 100%;}
+.formSection .step02 .content .p5 dl.agreeItem dt .checkBox{display: flex; gap: 8px; align-items: center; justify-content: start; width: 100%;}
+.formSection .step02 .content .p5 dl.agreeItem dd{width: 100%; height: 100px; overflow-y: scroll; background: #ffffff; border: 1px solid #dee2e6; border-radius: 8px; padding: 18px; font-size: 14px; line-height: 24px; color: #6c757d; text-align: left;}
+.formSection .step02 .content .p5 dl.agreeItem dd ul.privacy-list{list-style: initial; padding-left: 20px;}
+.formSection .step02 .content .p5 dl.agreeItem .agreement{display: flex; flex-direction: column; gap: 8px; color: #F40504;  font-size: 14px; align-items: start; width: 100%; font-weight: 500; text-align: left;}
+.formSection .step02 .content .p5 dl.agreeItem .agreement label{color: #6c757d; font-size: 14px; font-weight: 500; text-align: left;}
+.formSection .step02 .content .p5 dl.agreeItem .agreement > div{display: flex; gap: 8px; align-items: center;}
+.formSection .step02 .content .p5 dl.agreeItem .agreement > div > div{display: flex; gap: 8px; align-items: center;} */
+.formSection .step02 .content .p5 button#sendButton{width: 100%; position: sticky; bottom: 16px; font-size: 16px; font-weight: 700; display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 16px 5px; border-radius: 16px; gap: 8px; box-shadow: 0px 4px 6px -4px #F4050440, 0px 10px 15px -3px #F4050440;}
+.formSection .step02 .content .p5 button#sendButton.complete{background: #ff9696; pointer-events: none;}
+.formSection .step02 .content .p5 button#sendButton:disabled{background: #6a6b6c;}
+.formSection .step02 .content .p5 button#sendButton img{width: 20px; height: 20px;}
+.formSection .step02 .content .progress.result a.result{font-size: 16px; font-weight: 700; display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 16px 5px; border-radius: 16px;}
+
+.nextBtn{font-size: 16px; font-weight: 700; display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 10px 16px; border-radius: 16px; margin: 10px auto 0;}
+
+
+
+/* consent */
+.consent{width:100%;text-align:left;display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:14px;padding:14px; background: #fff;}
+/* "약관에 전체 동의합니다" — MAX 크기 버튼형 */
+.consent .allCheck{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  width:100%;
+  padding:18px 20px;
+  border:2px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  font-weight:800;font-size:17px;
+  cursor:pointer;
+  transition:background .15s,border-color .15s,box-shadow .15s;
+  margin-bottom:4px;
+}
+.consent .allCheck:hover{background:var(--red-a10);border-color:var(--red-soft);}
+.consent .allCheck:has(.cbx:checked){
+  background:var(--red);
+  border-color:var(--red);
+  color:#fff;
+  box-shadow:0 8px 20px -8px rgba(244,5,4,.45);
+}
+.consent .allCheck span{line-height:1.2;}
+.consent .row{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#444;padding-top:10px;}
+.consent .row .meta{margin-left:auto;}
+.consent .row a{color:var(--gray);font-size:12px;text-decoration:underline;flex:none;}
+.cbx{
+  appearance:none;-webkit-appearance:none;
+  width:30px;height:30px;
+  border:2.5px solid #cbd5e1;
+  border-radius:8px;
+  background:#fff;
+  flex:none;position:relative;cursor:pointer;
+  transition:background .15s,border-color .15s,transform .12s;
+}
+.cbx:checked{background:#fff;border-color:#fff;transform:scale(1);}
+.cbx:checked::after{
+  content:'✓';
+  position:absolute;inset:0;
+  color:var(--red);
+  font-size:22px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  line-height:1;
+}
+.consent .opt-note{font-size:11.5px;color:var(--gray);padding-top:4px;}
+.agree-item{border-top:1px solid var(--line);padding:12px 0 4px;}
+.agree-item:first-child{border-top:none;}
+.agree-head{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;text-align:left;}
+.agree-title{font-size:13.5px;font-weight:700;line-height:1.4;flex:1;}
+.agree-title b.req{color:var(--red);} .agree-title b.sel{color:var(--gray);font-weight:600;white-space:nowrap;}
+.agree-arr{color:var(--gray);font-size:18px;flex:none;width:22px;text-align:center;flex-shrink:0;}
+.agree-detail{max-height:0;overflow:hidden;transition:max-height .25s ease;background:var(--soft-bg);border-radius:10px;margin-top:0;}
+.agree-detail.open{max-height:420px;overflow-y:auto;margin-top:10px;padding:12px 14px;}
+.agree-intro{font-size:11px;color:var(--gray);margin-bottom:8px;}
+.agree-sec{margin-bottom:9px;} .agree-sec h5{font-size:11.5px;font-weight:700;color:#333;margin-bottom:3px;}
+.agree-sec p{font-size:11px;color:#666;line-height:1.55;}
+.yn-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;}
+.yn-row.main{border-top:1px dashed var(--line);margin-top:6px;}
+.yn-q{font-size:12.5px;color:#333;flex:1;line-height:1.45;font-weight:500;}
+.yn{display:flex;gap:6px;flex:none;}
+.yn-opt{display:flex;align-items:center;gap:4px;font-size:12.5px;border:1.5px solid var(--line);border-radius:8px;padding:6px 11px;cursor:pointer;color:var(--gray);transition:.12s;}
+.yn-opt input{display:none;}
+.yn-opt:has(input:checked){border-color:var(--red);background:var(--red-a10);color:var(--red);font-weight:700;}
+
+@media all and (max-width: 960px) {
+  .btn3 {width: calc(100% - 40px);}
+}
+
+@media all and (max-width: 480px) {
+  br.mo{display: block;}
+  .section .content {padding: 30px 45px; gap: 12px;}
+  .section01 .content .mb.mb-1 {font-size: 14px; line-height: 22px;}
+  .section .content h1{ line-height: 36px;}
+  .section01 .txt1 {font-size: 22px; line-height: 30px;}
+  .section01 .txt1 span.txtBox {padding: 2px 10px; border-radius: 6px; }
+  .section01 .txt2 {padding: 0 12px; font-size: 8px; line-height: 12px;}
+  
+  .section.section02 .content {gap: 12px;}
+  .section02 .mb-3 {gap: 8px; padding: 16px; height: 100px;}
+  .section02 .mb-3 > div > p:first-child {font-size: 18px; line-height: 24px;}
+  .section02 .mb-3 > div > p:last-child {font-size: 12px; line-height: 18px;}
+  .section02 .reviews {gap: 12px; }
+  .section02 .txt2 {padding: 0 12px; font-size: 8px; line-height: 12px;}
+  
+  .section03 .text-body {font-size: 14px; line-height: 22px;}
+  .section03 .btn2{width: 100%;}
+  .section03 .content > div:last-child .mt-12 > div > p {font-size: 12px; line-height: 18px;}
+  .section03 .content > div:last-child > span { padding: 0 12px; font-size: 8px; line-height: 12px;}
+  .btn3{font-size: 20px; line-height: 24px; padding: 20px 0;}
+  
+  .formSection .step01 {padding: 90px 35px 0;}
+  .formSection .step01 .content > span {font-size: 8px; line-height: 12px;}
+  
+  .formSection .step .content {gap: 18px;}
+  .formSection .step02 { display: none; padding: 90px 35px 0; }
+  .formSection .step02 .content .progress {gap: 18px;}
+  .formSection .step02 .content .progress h2 {font-size: 24px; line-height: 30px;}
+  .formSection .step02 .content .p1 .region { flex-direction: column; align-items: start; }
+  .formSection .step02 .content .p1 .region select { flex: initial; width: 100%; }
+  
+  .formSection .step02 .content .option-list{gap: 18px;}
+  .formSection .step02 .content .option-list li label { padding: 18px 20px;}
+
+  .formSection .step02:has(.p5.active){padding: 220px 35px 0;}
+  .formSection .step02 .content .p5 .top{top: -80px;}
+  .formSection .step02 .content .p5 .top span{font-size: 8px; line-height: 14px; padding: 0 12px;}
+  .formSection .step02 .content .p5 .allCheck p{font-size: 12px; line-height: 16px; width: 100%;}
+  .formSection .step02 .content .p5 dl.agreeItem .agreement{flex-wrap: nowrap;}
+  .formSection .step02 .content .p5 dl.agreeItem dt .checkBox{flex-wrap: nowrap;}
+  .formSection .step02 .content .p5 .agreeItem label{font-size: 18px; line-height: 20px; flex: 1;}
+}
+
+@media all and (max-width: 320px) {
+  .section .content {padding: 30px 10px; gap: 12px;}
+  .section02 .mb-3 > div > p:first-child {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .section02 .mb-3 > div > p:last-child {
+    font-size: 10px;
+    line-height: 18px;
+  }
+  .formSection .step01 {
+    padding: 90px 10px 0;
+  }
+  .formSection .step02 {
+    padding: 90px 10px 0;
+  }
+}
+
+/*1920 이미지에 컨텐츠 1000px 이면 maxwidth 1000으로*/
+@media screen and (max-width: 720px) {
+}
+
+
+/* ==========================================================================
+   BC_MP_DRAFT 캠페인 전용 (mp랜딩 디자인)
+   - 위쪽은 BC260331 style.css 그대로 (섹션 기본 규칙. 단계형 .formSection 규칙은 이 캠페인에서 쓰지 않음)
+   - 아래는 이 캠페인에서만 쓰는 클래스, 그리고 위쪽 캠페인 규칙의 덮어쓰기
+   - /assets, /main 공통 CSS는 건드리지 않음
+   ========================================================================== */
+
+/* ---------- 상단 혜택 띠 ---------- */
+.topBand { overflow: hidden; background: #1a1a1a; color: #fff; white-space: nowrap; }
+.topBand-track { display: inline-flex; animation: topBandMove 22s linear infinite; }
+.topBand-track span { padding: 9px 0; font-size: 13px; font-weight: 700; letter-spacing: -0.3px; }
+.topBand-track b { margin: 0 4px; color: #f40504; animation: topBandBlink 1.2s steps(2) infinite; }
+@keyframes topBandMove { to { transform: translateX(-50%); } }
+@keyframes topBandBlink { 50% { opacity: 0.25; } }
+
+/* ---------- 로고 바 ---------- */
+.topLogo { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: #fff; border-bottom: 1px solid #f0f0f0; }
+.wrapper .topLogo img { width: auto; height: 22px; }
+.topLogo span { font-size: 12px; font-weight: 600; color: #6c757d; }
+
+/* ---------- section01 히어로: 흰 배경 + 가운데 💸 ---------- */
+.section01 { background: #fff; }
+.section01 .content { gap: 14px; }
+.section01 .content .mb.mb-1 { font-size: 13px; font-weight: 700; color: #f40504; background: #f405040f; }
+.section01 .content .mb.mb-1 span { background: #f40504; animation: heroPing 1.4s infinite; }
+.section01 h1 { font-size: clamp(28px, 8.4vw, 36px); line-height: 1.25; letter-spacing: -1.4px; text-align: center; }
+.section01 h1 .bigNum { display: inline-block; font-size: 1.7em; line-height: 1; letter-spacing: -0.05em; vertical-align: -0.08em; box-shadow: inset 0 -0.18em 0 #ff908f66; }
+.section01 .content .mb-10 { font-size: 14px; font-weight: 600; }
+
+.heroVisual { position: relative; width: 100%; max-width: 420px; height: clamp(236px, 66vw, 296px); }
+.heroVisual::after { content: ""; position: absolute; left: 50%; bottom: 7%; width: 46%; height: 18px; border-radius: 50%; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.14), transparent); transform: translateX(-50%); animation: heroShadow 3.2s ease-in-out infinite; }
+.heroMain { position: absolute; z-index: 1; left: 50%; top: 47%; line-height: 1; transform: translate(-50%, -50%) rotate(-5deg); will-change: transform; animation: heroBob 3.2s ease-in-out infinite; }
+.heroMain i { display: block; font-style: normal; font-size: clamp(128px, 40vw, 168px); font-family: "Noto Color Emoji", sans-serif; filter: drop-shadow(0 16px 14px rgba(0, 0, 0, 0.18)); will-change: transform; animation: heroFlap 0.45s ease-in-out infinite alternate; }
+.floatEmoji { position: absolute; font-family: "Noto Color Emoji", sans-serif; font-size: var(--s, 34px); line-height: 1; filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.14)); animation: heroFloat 4.6s ease-in-out infinite; }
+@keyframes heroBob { 0%, 100% { transform: translate(-50%, -50%) rotate(-5deg); } 50% { transform: translate(-50%, -59%) rotate(5deg); } }
+@keyframes heroFlap { to { transform: translateY(-4px) rotate(3deg); } }
+@keyframes heroFloat { 50% { transform: translateY(-12px) rotate(10deg); } }
+@keyframes heroShadow { 50% { transform: translateX(-50%) scale(0.78); opacity: 0.55; } }
+@keyframes heroPing { 0% { box-shadow: 0 0 0 0 rgba(244, 5, 4, 0.45); } 70%, 100% { box-shadow: 0 0 0 7px rgba(244, 5, 4, 0); } }
+
+.section01 .txt1 { gap: 8px; font-size: clamp(22px, 6.4vw, 30px); line-height: 1.4; white-space: nowrap; }
+.section01 .txt1 span.txtBox { padding: 3px 12px; font-size: 0.56em; border-radius: 8px; background: #f40504; }
+.section01 .txt1 .payNum { display: inline-flex; align-items: center; color: #f40504; font-variant-numeric: tabular-nums; }
+
+.heroStats { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; max-width: 420px; border-radius: 16px; background: #fff; box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.04); }
+.heroStats li { display: flex; flex-direction: column; padding: 12px 4px; text-align: center; }
+.heroStats li + li { border-left: 1px solid #f0f0f0; }
+.heroStats b { font-size: 16px; font-weight: 800; letter-spacing: -0.6px; }
+.heroStats span { font-size: 11.5px; color: #6c757d; }
+
+.section01 .btn1 { width: 100%; max-width: 420px; font-size: 17px; font-weight: 800; box-shadow: var(--shadow-btn); animation: ctaPulse 1.4s ease-in-out infinite; }
+@keyframes ctaPulse { 50% { transform: scale(1.03); } }
+
+/* ---------- 금액 슬롯머신 (js/campaign.js가 숫자 칸을 만듦) ---------- */
+[data-slot] { display: inline-flex; line-height: 1.2; }
+.slotReel { display: block; height: 1.2em; overflow: hidden; }
+.slotReel-in { display: flex; flex-direction: column; will-change: transform; }
+.slotReel-in i { display: block; height: 1.2em; font-style: normal; text-align: center; }
+.slotReel.isSpin .slotReel-in { filter: blur(0.7px); }
+
+/* ---------- section02 실적 + 후기 롤링 ---------- */
+.section.section02 .content { gap: 28px; }
+.section02 .mb-3 { height: auto; padding: 18px 8px; gap: 6px; border-radius: 20px; box-shadow: var(--shadow-btn); }
+.section02 .mb-3 > div > p:first-child { font-size: clamp(16px, 4.6vw, 22px); }
+.reviewRoll { position: relative; width: 100%; max-width: 580px; height: 340px; overflow: hidden; -webkit-mask-image: linear-gradient(transparent, #000 8%, #000 86%, transparent); mask-image: linear-gradient(transparent, #000 8%, #000 86%, transparent); }
+.section02 .reviews { flex-direction: column; flex-wrap: nowrap; gap: 16px; padding: 12px 2px; will-change: transform; }
+.section02 .reviews > div { flex: none; min-width: 0; padding: 20px; box-shadow: 0 10px 24px -16px rgba(0, 0, 0, 0.28); }
+.section02 .reviews > div > div:first-child > div.review-icon { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border-radius: 50%; background: #f405041a; }
+.section02 .reviews > div > div:first-child > div.review-icon span { font-size: 18px; font-weight: 800; color: #f40504; }
+.section02 .reviews > div > div:last-child { font-size: 15px; line-height: 25px; }
+
+/* ---------- section03 혜택 ---------- */
+.section03 { background: #fff; }
+.section03 h1 { font-size: clamp(26px, 7.6vw, 32px); line-height: 1.3; }
+.section03 .flex { width: 100%; max-width: 420px; align-items: center; }
+.section03 .btn2 { width: 100%; font-weight: 800; box-shadow: var(--shadow-btn); }
+.section03 .content > div:last-child .mt-12 > div > .emojiIcon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 20px; background: #fff; font-family: "Noto Color Emoji", sans-serif; font-size: 30px; line-height: 1; box-shadow: 0 10px 22px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.04); }
+
+/* ---------- section04 신청서 (한 페이지 설문형) ---------- */
+.section04 { background: #f9f9f9; scroll-margin-top: 0; }
+.section.section04 .content { gap: 16px; align-items: stretch; }
+.section04 .applyHead { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+.section04 .applyHead .text-desc { font-size: 13px; font-weight: 700; line-height: 1.4; color: #c40403; }
+.section04 .applyHead h2 { font-size: clamp(22px, 6.4vw, 26px); font-weight: 700; line-height: 1.35; letter-spacing: -0.8px; }
+.section04 .applyHead p { font-size: 15px; font-weight: 500; color: #6c757d; }
+.section04 .txt2 { max-width: none; padding: 0; font-size: 12px; line-height: 18px; text-align: left; color: rgba(0, 0, 0, 0.5); }
+
+.sheetAmount { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; border-radius: 16px; background: #fff; box-shadow: 0 14px 30px -18px rgba(244, 5, 4, 0.45), 0 0 0 1px rgba(244, 5, 4, 0.08); }
+.sheetAmount-label { font-size: 13px; font-weight: 700; line-height: 1.45; color: #52525b; }
+.sheetAmount-num { display: flex; align-items: center; font-size: clamp(22px, 6.6vw, 26px); font-weight: 800; letter-spacing: -0.8px; line-height: 1.2; color: #f40504; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sheetAmount-num sup { align-self: flex-start; margin-left: 2px; font-size: 0.45em; color: #6c757d; }
+
+.applyForm { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.applyQ { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 16px; font-weight: 800; letter-spacing: -0.5px; text-align: left; }
+.applyQ .emoji, .selectBox-panel .icon { font-family: "Noto Color Emoji", sans-serif; font-weight: 400; }
+
+.selectBox { position: relative; }
+.selectBox-btn { display: flex; align-items: center; justify-content: space-between; width: 100%; height: 56px; padding: 0 16px; border-radius: 12px; background: #fff; font-size: 16px; font-weight: 600; color: #9aa1ad; text-align: left; box-shadow: 0 0 0 1px #e4e4e7; transition: box-shadow 0.15s; }
+.selectBox-btn i { width: 9px; height: 9px; border-right: 2px solid #6b7280; border-bottom: 2px solid #6b7280; transform: rotate(45deg) translate(-2px, -2px); transition: transform 0.2s; }
+.selectBox.isChosen .selectBox-btn { color: #1a1a1a; box-shadow: 0 0 0 1.5px #1a1a1a; }
+.selectBox.isOpen .selectBox-btn { box-shadow: 0 0 0 1.5px #1a1a1a, 0 0 0 4px rgba(17, 17, 17, 0.08); }
+.selectBox.isOpen .selectBox-btn i { transform: rotate(-135deg) translate(-2px, -2px); }
+.selectBox-panel { display: none; max-height: 296px; margin-top: 6px; overflow-y: auto; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px #e4e4e7, 0 14px 28px -18px rgba(17, 24, 39, 0.35); -webkit-overflow-scrolling: touch; }
+.selectBox.isOpen .selectBox-panel { display: block; }
+.selectBox-panel.isGrid { display: none; }
+.selectBox.isOpen .selectBox-panel.isGrid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.selectBox-panel li button { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 48px; padding: 0 16px; border-bottom: 1px solid #f1f3f7; font-size: 15px; font-weight: 600; text-align: left; }
+.selectBox-panel.isGrid li button { justify-content: center; padding: 0 6px; border-right: 1px solid #f1f3f7; font-size: 14px; text-align: center; }
+.selectBox-panel li:last-child button { border-bottom: 0; }
+.selectBox-panel li button:hover { background: #fff4f2; }
+.selectBox-panel li button[aria-selected="true"] { color: #c40403; }
+.selectBox-panel li button[aria-selected="true"]::after { content: "✓"; margin-left: auto; font-weight: 900; }
+.selectBox-panel .selectBox-back { grid-column: 1 / -1; }
+.selectBox-panel .selectBox-back button { background: #fafaf9; font-weight: 800; }
+.selectBox-panel .icon { font-size: 20px; }
+
+.section04 .labelBox { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.section04 .labelBox .label { font-size: 16px; font-weight: 800; letter-spacing: -0.5px; text-align: left; }
+.section04 .labelBox input { width: 100%; height: 56px; padding: 0 16px; border-radius: 12px; background: #fff; font-size: 16px; font-weight: 600; box-shadow: 0 0 0 1px #e4e4e7; }
+.section04 .labelBox input:focus { outline: none; box-shadow: 0 0 0 1.5px #1a1a1a, 0 0 0 4px rgba(17, 17, 17, 0.08); }
+.section04 .labelBox input::placeholder { color: #9aa1ad; }
+.section04 #sendButton { display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%; margin-top: 14px; padding: 17px 16px; border-radius: 16px; font-size: 17px; font-weight: 800; box-shadow: var(--shadow-btn); animation: ctaPulse 1.4s ease-in-out infinite; }
+.section04 #sendButton img { width: 20px; height: 20px; }
+
+/* ---------- 개인정보 동의 팝업 (공통 .common-modal-wrap 위에 캠페인 모양만) ---------- */
+.consentModal.common-modal-wrap { z-index: 15; padding: 0 16px; }
+.consentModal .modal { display: flex; flex-direction: column; width: 100%; max-width: 440px; max-height: 88svh; padding: 18px 18px 16px; border-radius: 20px; background: #fff; animation: blockerPop 0.3s cubic-bezier(0.2, 1.3, 0.4, 1); }
+.consentModal .close-btn { flex: none; width: 32px; height: 32px; margin: 0 0 4px auto; font-size: 18px; color: #6c757d; }
+.consentScroll { flex: 1; min-height: 0; overflow-y: auto; text-align: left; }
+.consentScroll h2 { margin-bottom: 6px; font-size: 20px; font-weight: 800; line-height: 1.35; letter-spacing: -0.6px; }
+.consentScroll .agree-intro { margin-bottom: 12px; }
+.consentScroll .consent { padding: 12px; }
+.consentScroll .agree-check { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.consentScroll .agree-check--sub { margin-top: 10px; }
+.consentScroll .agree-item .cbx { width: 24px; height: 24px; border-width: 2px; border-radius: 6px; }
+.consentScroll .agree-item .cbx:checked { border-color: #f40504; }
+.consentScroll .agree-item .cbx:checked::after { font-size: 16px; }
+.consentScroll .agree-detail.open { max-height: 120px; }
+.consentModal .consentOk { flex: none; width: 100%; margin-top: 12px; padding: 14px; border-radius: 12px; font-size: 18px; font-weight: 700; }
+.consentModal .consentOk:disabled { background: #bdbdbd; cursor: default; }
+
+/* ---------- 이탈 방지 팝업 (공통 form.js .blockerModal 구조 · 스타일 기준) ---------- */
+.blockerModal { display: none; justify-content: center; align-items: center; position: fixed; left: 0; top: 0; z-index: 20; width: 100%; height: 100%; padding: 0 16px; background: #00000073; }
+.blockerModal .contentBox { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 400px; padding: 36px 20px 22px; border-radius: 24px; background: #fffbd6; animation: blockerPop 0.35s cubic-bezier(0.2, 1.3, 0.4, 1); }
+.blockerModal .contentBox .roundText { margin-bottom: 10px; padding: 6px 18px; font-size: 15px; font-weight: 500; letter-spacing: -0.32px; color: #000; border: 1px solid #000; border-radius: 44px; }
+.blockerModal .contentBox .textBox { text-align: center; }
+.blockerModal .contentBox .textBox p { margin-bottom: 4px; font-size: 22px; font-weight: 600; letter-spacing: -0.44px; color: #050505; }
+.blockerModal .contentBox .textBox strong { display: inline-block; font-size: clamp(28px, 8vw, 34px); font-weight: 800; line-height: 1.25; letter-spacing: -1.2px; background: linear-gradient(180deg, #ff3828 0%, #e31909 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.blockerModal .contentBox img { width: auto; max-width: 72%; margin: 8px 0 18px; }
+.blockerModal .contentBox .backBtn { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; max-width: 314px; height: 52px; overflow: hidden; font-size: 20px; font-weight: 700; letter-spacing: -0.8px; color: #fff; border-radius: 72px; background: #000; }
+.blockerModal .contentBox .backBtn span { position: relative; z-index: 1; }
+.blockerModal .contentBox .backBtn::after { content: ""; position: absolute; inset: 0; z-index: 0; background: #e31909; transform: translateX(-100%); animation: blockerGauge 7s linear forwards; }
+.blockerModal .contentBox .leaveBtn { margin-top: 12px; font-size: 13px; color: #8a8a8a; text-decoration: underline; }
+.blockerModal .contentBox .closeBtn { position: absolute; top: 14px; right: 14px; width: 28px; height: 28px; background: url(/assets/images/img_blocker_closeBtn.png) no-repeat center / contain; }
+@keyframes blockerGauge { 0% { transform: translateX(-100%); } 80%, 100% { transform: translateX(0); } }
+@keyframes blockerPop { from { transform: scale(0.85); opacity: 0; } }
+
+/* ---------- 하단 고정 버튼: 히어로 버튼·신청서가 보이는 동안 숨김 (js/campaign.js가 .isHidden 토글) ---------- */
+.btn3 { transition: opacity 0.25s, transform 0.25s; }
+.btn3.isHidden { opacity: 0; transform: translateY(16px); pointer-events: none; }
+
+/* ---------- 모바일 ---------- */
+@media all and (max-width: 480px) {
+  .section .content { padding: 36px 20px; }
+  .section01 .content { padding-top: 26px; gap: 12px; }
+  .section01 .content .mb-10 { font-size: 13px; }
+  .section04 .txt2 { font-size: 11px; line-height: 16px; }
+}
+
+/* ---------- 움직임 줄이기 설정 존중 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .topBand-track, .topBand-track b, .heroMain, .heroMain i, .floatEmoji, .heroVisual::after,
+  .section01 .btn1, .section01 .content .mb.mb-1 span, .section04 #sendButton,
+  .consentModal .modal, .blockerModal .contentBox, .blockerModal .contentBox .backBtn::after { animation: none !important; }
+}

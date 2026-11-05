@@ -1,0 +1,274 @@
+<style>
+    .shareWrapParent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .floatingShare {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 20px 0 40px 0;
+      padding-top: 14px;
+      border-top: 1px solid #e3e3e3;
+    }
+    .floatingShare .textBox {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      gap: 4px;
+    }
+    .floatingShare .textBox strong {
+      color: #414141;
+      font-family: Pretendard;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.56px;
+    }
+    .floatingShare .textBox p {
+      margin-bottom: 0;
+      color: #414141;
+      font-family: Pretendard;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.56px;
+    }
+    .floatingShare .btnBox {
+      display: flex;
+      gap: 10px;
+    }
+    .floatingShare button {
+      padding: 0;
+      background-color: transparent;
+    }
+    .floatingShare button img {
+      width: 46px;
+      height: 46px;
+    }
+    .toast {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 94px;
+      left: 50%;
+      width: max-content;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 9999;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: #333;
+      color: #fff;
+      font-family: Pretendard;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 0.56px;
+      text-transform: uppercase;
+    }
+    @media screen and (max-width: 760px) {
+      .floatingShare {
+        order:1;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 34px;
+        margin-bottom:0;
+        padding-top: 20px;
+      }
+      .floatingShare .textBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0px;
+      }
+      .floatingShare .textBox strong {
+        font-size: 16px;
+      }
+      .floatingShare .textBox p {
+        font-size: 16px;
+      }
+      .floatingShare .btnBox {
+        justify-content: center;
+        margin-top: 14px;
+        gap: 10px;
+      }
+      .floatingShare button img {
+        width: 50px;
+        height: 50px;
+      }
+      .toast {
+        top: auto;
+        bottom: 50px;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+       shareInit();
+    });
+
+    const shareInit = () => {
+      function getOgImage() {
+        const metaTag = document.querySelector('meta[property="og:image"]');
+        return metaTag ? metaTag.getAttribute("content") : "";
+      }
+
+      console.log("shareInit--------");
+      injectFloatingShare();
+      /* ===========================
+       * (공유 플로팅 통합)
+       * =========================== */
+
+      (function loadKakaoSDK() {
+        if (!window.Kakao) {
+          const script = document.createElement("script");
+          script.src =
+            "https://t1.kakaocdn.net/kakao_js_sdk/2.7.6/kakao.min.js";
+          script.onload = initKakao;
+          document.head.appendChild(script);
+        } else {
+          initKakao();
+        }
+      })();
+
+      function initKakao() {
+        if (!window.Kakao.isInitialized()) {
+          window.Kakao.init("c018ce1f856e9c10b491d3663920fa90"); //카카오 JavaScript 키 입력
+          console.log("Kakao SDK Initialized");
+        }
+      }
+
+      function injectFloatingShare() {
+        console.log(injectFloatingShare, "injectFloatingShare======");
+        const shareWrap = document.createElement("div");
+        const appendTarget = document.querySelector(".post-banner-button");
+        console.log(appendTarget, "appendTargetappendTarget");
+        shareWrap.className = "floatingShare";
+
+        // 부모요소 가져오기
+        const parentEl = appendTarget.parentNode;
+
+        // 부모에 클래스 추가
+        parentEl.classList.add("shareWrapParent");
+
+
+        shareWrap.innerHTML = `
+        <div class="textBox">
+          <strong>콘텐츠가 도움이 되었다면?</strong>
+          <p>친구에게 공유하기</p>
+        </div>
+        <div class="btnBox">
+          <button
+            id="kakaoShareBtn"
+            class="kakao_share kakao"
+            title="카카오톡 공유"
+          >
+            <img
+              src="https://meritzpartners.com/blog/wp-content/uploads/2025/10/img_btnKakao.png"
+              alt="카카오톡 공유"
+            />
+          </button>
+          <button id="linkCopyBtn" class="copy_link link" title="링크 복사">
+            <img
+              src="https://meritzpartners.com/blog/wp-content/uploads/2025/10/img_btnCopy.png"
+              alt="주소 복사"
+            />
+          </button>
+        </div>
+      `;
+   
+        parentEl.insertBefore(shareWrap, appendTarget);
+
+        // 버튼 이벤트 연결
+        document
+          .getElementById("kakaoShareBtn")
+          .addEventListener("click", shareToKakao);
+        document
+          .getElementById("linkCopyBtn")
+          .addEventListener("click", copyLink);
+      }
+
+      // 카카오톡 공유
+      function shareToKakao() {
+        const url = window.location.href;
+        const title = document.title || "메리츠 파트너스";
+        const image = getOgImage();
+        window.Kakao.Share.sendDefault({
+          objectType: "feed",
+          content: {
+            title,
+            description: "메리츠 파트너스 공식 사이트",
+            imageUrl: image,
+            link: { mobileWebUrl: url, webUrl: url },
+          },
+          buttons: [
+            {
+              title: "페이지 바로가기",
+              link: { mobileWebUrl: url, webUrl: url },
+            },
+          ],
+        });
+      }
+
+      // 링크 복사 + 토스트 알림
+      function copyLink() {
+        const url = window.location.href;
+
+        // 1️⃣ clipboard API 지원 여부 확인
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard
+            .writeText(url)
+            .then(() => showToast("링크가 복사되었습니다"))
+            .catch(() => showToast("복사 중 오류가 발생했습니다"));
+        } else {
+          // 2️⃣ fallback (HTTPS 아닌 환경, iOS 인앱 등)
+          const textArea = document.createElement("textarea");
+          textArea.value = url;
+          textArea.style.position = "fixed";
+          textArea.style.top = "-1000px";
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+
+          try {
+            const success = document.execCommand("copy");
+            if (success) {
+              showToast("링크가 복사되었습니다");
+            } else {
+              alert("복사 기능을 지원하지 않는 환경입니다.");
+            }
+          } catch (err) {
+            alert("복사 실패: " + err);
+          }
+
+          document.body.removeChild(textArea);
+        }
+      }
+
+      // 토스트 알림
+      function showToast(message) {
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.innerHTML = `
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10.8056" cy="10.8056" r="10.8056" fill="#EF3B24"/>
+            <path d="M13.5967 6.7793C13.8374 6.58219 14.1904 6.57575 14.4395 6.7832C14.722 7.01897 14.7621 7.44037 14.5303 7.72559L9.63184 13.751C9.50167 13.9111 9.3051 14.0029 9.09863 13.9971C8.89212 13.9911 8.70092 13.8885 8.58008 13.7217L6.48145 10.8213C6.26602 10.5237 6.3284 10.1054 6.62402 9.88574C6.92148 9.66491 7.33886 9.73102 7.55566 10.0303L9.14746 12.2295L13.501 6.875L13.5967 6.7793Z" fill="white" stroke="white" stroke-width="0.491163"/>
+          </svg>${message}
+        `;
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(() => (toast.style.opacity = "1"));
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          setTimeout(() => toast.remove(), 300);
+        }, 1500);
+      }
+    };
+  </script>

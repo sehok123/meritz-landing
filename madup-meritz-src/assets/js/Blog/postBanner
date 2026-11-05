@@ -1,0 +1,156 @@
+<style>
+  .bottom-sheet p {
+    margin-bottom: 0;
+  }
+  .bottom-sheet {
+    z-index: 1000;
+  }
+  .bottom-sheet .sheet-header .close-button {
+    padding: 0;
+  }
+  .bottom-sheet .sheet-header .close-button:hover {
+    background-color: transparent;
+  }
+  body {
+    text-align: left !important;
+  }
+  .is-category .faloting button span {
+    position: relative;
+  }
+  .is-category .faloting button span::after {
+    position: absolute;
+    left: 54%;
+    bottom: -1%;
+    transform: translateX(-50%);
+    content: "";
+    width: 100px;
+    height: 86px;
+    border-radius: 100px;
+    background: url(/main/images0211/floating.png) no-repeat center;
+    overflow: hidden;
+  }
+  .is-category .faloting button span img {
+    display: none;
+  }
+</style>
+<script src="/assets/js/lib/jquery-3.7.0.min.js"></script>
+<script src="/assets/js/lib/aos.js"></script>
+<script src="/assets/js/lib/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/assets/js/commonScript.js"></script>
+<script src="/assets/js/checkBadWords.js"></script>
+<script src="/assets/js/form.js"></script>
+<script src="/assets/js/notice.js"></script>
+<script src="/assets/js/privacy_terms.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/floating.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const isCategoryPage = window.location.pathname.includes("/blog/category/");
+    if (isCategoryPage) {
+      document.body.classList.add("is-category");
+    }
+  });
+  function getAdvtParams() {
+    const url = new URL(window.location.href);
+    return {
+      advtMdiaDivVal: url.searchParams.get("advtMdiaDivVal"),
+      advtMdiaTpDivVal: url.searchParams.get("advtMdiaTpDivVal"),
+      advtMdiaDtlDivVal: url.searchParams.get("advtMdiaDtlDivVal"),
+    };
+  }
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+      setTimeout(() => {
+        const currentParams = getAdvtParams();
+        let isParams =
+          currentParams.advtMdiaDivVal &&
+          currentParams.advtMdiaTpDivVal &&
+          currentParams.advtMdiaDtlDivVal;
+        const cssFiles = [
+          "/assets/css/default.css",
+          "/assets/css/fonts.css",
+          "/assets/css/styles_08A.css",
+          "/assets/css/common_modal.css",
+          "/assets/css/modal_alert.css",
+        ];
+        cssFiles.forEach((href) => {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = href;
+          document.head.appendChild(link);
+        });
+        //학습 가이드 카테고리
+        const guideUrls = [
+          "/blog/guide/",
+          "/blog/category/guide/",
+          "/blog/crm/crm-contents-10",
+          "/blog/crm/crm-contents-11",
+          "/blog/crm/crm-contents-12",
+          "/blog/crm/crm-contents-13",
+          "/blog/crm/crm-contents-14",
+          "/blog/crm/crm-contents-15",
+          "/blog/crm/crm-contents-16",
+          "/blog/crm/crm-contents-17",
+        ];
+        // 현재 페이지 URL path
+        const currentPath = decodeURI(window.location.pathname);
+        // guideUrls 중 하나라도 포함되는지 여부
+        const isGuideUrl = guideUrls.some((url) => currentPath.includes(url));
+        const isFactcheck = currentPath.includes("/blog/category/factcheck/");
+        const isInterview = currentPath.includes("/blog/category/interview/");
+
+        const links = document.querySelectorAll(".post-banner-button");
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            // 기본 링크 이동 막기
+            if (isGuideUrl) {
+              window.location.href =
+                "https://meritz-partners.com/appInstall.jsp";
+              return;
+            }
+            // 이미 파라미터가 있으면 덮어쓰지 않음
+            if (isParams) {
+              openBottomSheet("sheet-counsel");
+              return;
+            }
+            let advtMdiaDivVal = "site";
+            let advtMdiaTpDivVal = "blog";
+            let advtMdiaDtlDivVal = "";
+            if (link.classList.contains("main-banner-top")) {
+              if (isFactcheck) advtMdiaDtlDivVal = "factcheck-banner-top";
+              else if (isInterview) advtMdiaDtlDivVal = "interview-banner-top";
+              else advtMdiaDtlDivVal = "main-banner-top";
+            } else if (link.classList.contains("main-banner-middle")) {
+              advtMdiaDtlDivVal = "main-banner-middle";
+            } else {
+              // blog case → URL 경로 마지막 부분(한글 slug)
+              const pathParts = window.location.pathname
+                .split("/")
+                .filter(Boolean);
+              advtMdiaDtlDivVal = pathParts[pathParts.length - 1] || "unknown";
+            }
+            // 현재 URL에 파라미터 추가
+            const url = new URL(window.location.href);
+            url.searchParams.set("advtMdiaDivVal", advtMdiaDivVal);
+            url.searchParams.set("advtMdiaTpDivVal", advtMdiaTpDivVal);
+            url.searchParams.set("advtMdiaDtlDivVal", advtMdiaDtlDivVal);
+            // 주소창에 한글 그대로 반영
+            window.history.replaceState({}, "", decodeURI(url.toString()));
+            openBottomSheet("sheet-counsel");
+          });
+        });
+      });
+      const counselDiv = document.createElement("div");
+      counselDiv.id = "sheet-counsel";
+      counselDiv.className = "bottom-sheet sheet-counsel";
+      const successDiv = document.createElement("div");
+      successDiv.id = "sheet-success";
+      successDiv.className = "bottom-sheet sheet-success";
+      document.body.append(counselDiv, successDiv);
+    },
+    100,
+  );
+</script>

@@ -1,0 +1,233 @@
+:root{
+  --red:#f40504; --red-soft:#ff908f; --red-a10:rgba(244,5,4,.06); --red-a25:rgba(244,5,4,.25);
+  --ink:#1a1a1a; --gray:#6c757d; --line:#dee2e6; --bg:#f9f9f9; --card:#ffffff; --soft-bg:#f8f9fa;
+  --shadow-btn:0 4px 6px -4px rgba(244,5,4,.4),0 10px 15px -3px rgba(244,5,4,.4);
+  --maxw:600px;
+}
+
+.wrapper {width: 100%; max-width: 1000px !important; overflow: initial; background: #fff; display: flex; flex-direction: column; position: relative; gap: clamp(0px, 5vw, 50px);}
+.wrapper.off {display: none;}
+.wrapper img {width: 100%;}
+* {font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;}
+.colorMain {color: #f40504;}
+.backgroundMain { background: #f40504; color: #ffffff;}
+br.mo{display: none;}
+.mb { display: flex; gap: 8px; border-radius: 500px; align-items: center; justify-content: center;}
+.section {padding: 0;}
+.btn {cursor: pointer;}
+.section .content { width: 100%; max-width: 1000px; margin: 0 auto; padding: 90px 40px; display: flex; flex-direction: column; gap: 30px; align-items: center;}
+
+.wrapper .fixed_btn{cursor: pointer; position: sticky; bottom: 0px; left: 0;}
+/**/
+.formSection { display: none; background: #f8f9fa; }
+.formSection.on {display: block;}
+.formSection .header { display: flex; align-items: center; justify-content: start; height: 56px; width: 100%; padding: 0 10px; border-bottom: 1px solid #dee2e6; position: sticky; top: 0; left: 0; }
+.formSection .header img { width: 40px; height: 40px; cursor: pointer; }
+.formSection .step .content { max-width: 580px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 0 10px;}
+.formSection .step01 {padding: 120px 40px 0; min-height: calc(100svh - 56px);}
+.formSection .step01 h2 { font-weight: 600; font-size: 22px; line-height: 32px; }
+.formSection .step01 p.txt1 { font-weight: 500; font-size: 16px; line-height: 26px; color: #6c757d; }
+.formSection .step01 .flex {max-width: 384px; width: 100%; display: flex; justify-content: center; align-items: center; justify-content: space-between; text-align: center; font-size: 18px; line-height: 24px; font-weight: 600;}
+.formSection .step01 .flex > span{width: 1px; height: 32px; background: #dee2e6;}
+.formSection .step01 .btn4 { display: flex; gap: 8px; padding: 16px 0; width: 100%; max-width: 384px; font-weight: 700; font-size: 16px; line-height: 28px; justify-content: center; align-items: center; border-radius: 16px; box-shadow:0px 4px 6px -4px #f4050440,0px 10px 15px -3px #f4050440;}
+.formSection .step01 .btn4 img { width: 20px; height: 20px; }
+.formSection .step01 p.txt2 { font-weight: 500; font-size: 14px; line-height: 22px; color: #6c757d; }
+.formSection .step01 .content > span { width: 100%; padding: 0px 10px; color: rgba(0, 0, 0, 0.5); font-weight: 400; font-size: 14px; line-height: 22px; text-align: left; }
+.formSection .step01.off {display: none;}
+
+.formSection .step02 { display: none; padding: 120px 40px 0; min-height: calc(100svh - 56px);}
+  .formSection .step02:has(.p5.active){padding: 327px 35px 0;}
+.formSection .step02.active {display: block;}
+
+.formSection .step02 nav { display: flex; flex-direction: column; width: 100%; }
+.formSection .step02 nav.last {display: none;}
+.formSection .step02 nav .bg { width: 100%; height: 8px; background: #f0f0f0; border-radius: 5px; overflow: hidden; }
+.formSection .step02 nav .bg .percentBg { display: block; width: 20%; height: 100%; background: #f40504; transition: all .2s ease; }
+.formSection .step02 nav .count { display: flex; gap: 4px; justify-content: end; align-items: center; font-size: 14px; line-height: 32px; font-weight: 500; color: #6c757d; }
+.formSection .step02 .content .progress { display: none; flex-direction: column; gap: 30px; width: 100%; }
+.formSection .step02 .content .progress.active {display: flex;}
+.formSection .step02 .content .progress h2 { font-weight: 600; font-size: 26px; line-height: 32px; text-align: left; }
+.formSection .step02 .content .p1 .flex { display: flex; flex-direction: column; gap: 18px; }
+.formSection .step02 .content .p1 label { font-size: 18px; line-height: 1em; font-weight: 500; color: #1a1a1a; text-align: left; }
+.formSection .step02 .content .p1 .region { display: flex; gap: 12px; align-items: center; }
+.formSection .step02 .content .p1 .region select { height: 48px; padding: 0 12px; border-radius: 8px; background: #ffffff; flex: 1; }
+/*2단계*/
+.formSection .step02 .content .option-list { display: flex; flex-direction: column; gap: 30px; align-items: center; width: 100%; }
+.formSection .step02 .content .option-list li {width: 100%;}
+.formSection .step02 .content .option-list li label {cursor: pointer; display: flex; gap: 12px; align-items: center; padding: 20px; width: 100%; border-radius: 24px; color: #1a1a1a; font-size: 18px; line-height: 48px; font-weight: 500; justify-content: start; border: 2px solid transparent;}
+.formSection .step02 .content .option-list li label input { display: none; }
+.formSection .step02 .content .option-list li label:has(input[type="radio"]:checked) { background: #f405041a; border: 2px solid #f40504; color: #f40504;}
+.formSection .step02 .content .option-list li label span.icon { width: 50px; height: 50px; border-radius: 12px; background: #ffffff; display: flex; justify-content: center; align-items: center; font-size: 24px; line-height: 32px; font-weight: 600;}
+.formSection .step02 .content .option-list li label:has(input[type="radio"]:checked) span.icon {background: #f405041a;}
+.formSection .step02 .content .p5{position: relative;}
+.formSection .step02 .content .p5 .top{display: flex; flex-direction: column; gap: 30px; position: absolute; top: -120px; width: 100%; max-width: 580px; transform: translateY(-100%);}
+.formSection .step02 .content .p5 .top span{font-size: 14px; line-height: 22px; color: rgba(0,0,0,.5); padding: 0 30px; text-align: left;}
+.formSection .step02 .content .p5 .labelBox{display: flex; flex-direction: column; gap: 18px; width: 100%; align-items: start;}
+.formSection .step02 .content .p5 .labelBox label{font-weight: 500; font-size: 18px; line-height: 1em; color: #1a1a1a;}
+.formSection .step02 .content .p5 .labelBox input{height: 48px; padding: 0 12px; border-radius: 8px; background: #ffffff; width: 100%; font-size: 18px;}
+/* .formSection .step02 .content .p5 .allCheck{display: flex; gap: 8px; align-items: center; width: 100%; justify-content: start; flex-wrap: wrap;}
+.formSection .step02 .content .p5 .agreeItem{display: flex; gap: 8px; align-items: center;}
+.formSection .step02 .content .p5 .agreeItem input.box{position: relative; appearance: none; width: 24px; height: 24px; border-radius: 8px; background: transparent; border: 1px solid #dee2e6; cursor: pointer;}
+.formSection .step02 .content .p5 .agreeItem input.box:checked{background: #495057;}
+.formSection .step02 .content .p5 .agreeItem input.box:checked:after{content: ""; position: absolute; top: 39%; left: 50%; width: 12px; height: 6px; border-left: 2px solid #f8f9fa; border-bottom: 2px solid #f8f9fa; transform: translate(-50%, -50%) rotate(-45deg);}
+.formSection .step02 .content .p5 .agreeItem input.whole{appearance: none; width: 30px; height: 30px; background: url(../images/check_before.png) no-repeat center; background-size: contain; cursor: pointer;}
+.formSection .step02 .content .p5 .agreeItem input.whole:checked{background: url(../images/check_after.png) no-repeat center; background-size: contain;}
+.formSection .step02 .content .p5 .agreeItem input:checked + label{color: #1a1a1a; font-weight: 600;}
+.formSection .step02 .content .p5 .agreeItem label{font-size: 18px; line-height: 1em; font-weight: 500; color: #6C757D; text-align: left;}
+.formSection .step02 .content .p5 .agreeItem label span.infoText{ width: 100%; text-align: left; font-size: 15px; margin-top: 4px; color: #ee3823;}
+.formSection .step02 .content .p5 .allCheck p{font-size: 14px; line-height: 18px; color: #6c757d; text-align: left;}
+
+
+.formSection .step02 .content .p5 dl.agreeItem{flex-direction: column; width: 100%;}
+.formSection .step02 .content .p5 dl.agreeItem dt{width: 100%;}
+.formSection .step02 .content .p5 dl.agreeItem dt .checkBox{display: flex; gap: 8px; align-items: center; justify-content: start; width: 100%;}
+.formSection .step02 .content .p5 dl.agreeItem dd{width: 100%; height: 100px; overflow-y: scroll; background: #ffffff; border: 1px solid #dee2e6; border-radius: 8px; padding: 18px; font-size: 14px; line-height: 24px; color: #6c757d; text-align: left;}
+.formSection .step02 .content .p5 dl.agreeItem dd ul.privacy-list{list-style: initial; padding-left: 20px;}
+.formSection .step02 .content .p5 dl.agreeItem .agreement{display: flex; flex-direction: column; gap: 8px; color: #F40504;  font-size: 14px; align-items: start; width: 100%; font-weight: 500; text-align: left;}
+.formSection .step02 .content .p5 dl.agreeItem .agreement label{color: #6c757d; font-size: 14px; font-weight: 500; text-align: left;}
+.formSection .step02 .content .p5 dl.agreeItem .agreement > div{display: flex; gap: 8px; align-items: center;}
+.formSection .step02 .content .p5 dl.agreeItem .agreement > div > div{display: flex; gap: 8px; align-items: center;} */
+.formSection .step02 .content .p5 button#sendButton{width: 100%; position: sticky; bottom: 16px; font-size: 16px; font-weight: 700; display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 16px 5px; border-radius: 16px; gap: 8px; box-shadow: 0px 4px 6px -4px #F4050440, 0px 10px 15px -3px #F4050440;}
+.formSection .step02 .content .p5 button#sendButton.complete{background: #ff9696; pointer-events: none;}
+.formSection .step02 .content .p5 button#sendButton:disabled{background: #6a6b6c;}
+.formSection .step02 .content .p5 button#sendButton img{width: 20px; height: 20px;}
+.formSection .step02 .content .progress.result a.result{font-size: 16px; font-weight: 700; display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 16px 5px; border-radius: 16px;}
+
+.nextBtn{font-size: 16px; font-weight: 700; display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 10px 16px; border-radius: 16px; margin: 10px auto 0;}
+
+
+
+/* consent */
+.consent{width:100%;text-align:left;display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:14px;padding:14px; background: #fff;}
+/* "약관에 전체 동의합니다" — MAX 크기 버튼형 */
+.consent .allCheck{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  width:100%;
+  padding:18px 20px;
+  border:2px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  font-weight:800;font-size:17px;
+  cursor:pointer;
+  transition:background .15s,border-color .15s,box-shadow .15s;
+  margin-bottom:4px;
+}
+.consent .allCheck:hover{background:var(--red-a10);border-color:var(--red-soft);}
+.consent .allCheck:has(.cbx:checked){
+  background:var(--red);
+  border-color:var(--red);
+  color:#fff;
+  box-shadow:0 8px 20px -8px rgba(244,5,4,.45);
+}
+.consent .allCheck span{line-height:1.2;}
+.consent .row{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#444;padding-top:10px;}
+.consent .row .meta{margin-left:auto;}
+.consent .row a{color:var(--gray);font-size:12px;text-decoration:underline;flex:none;}
+.cbx{
+  appearance:none;-webkit-appearance:none;
+  width:30px;height:30px;
+  border:2.5px solid #cbd5e1;
+  border-radius:8px;
+  background:#fff;
+  flex:none;position:relative;cursor:pointer;
+  transition:background .15s,border-color .15s,transform .12s;
+}
+.cbx:checked{background:#fff;border-color:#fff;transform:scale(1);}
+.cbx:checked::after{
+  content:'✓';
+  position:absolute;inset:0;
+  color:var(--red);
+  font-size:22px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  line-height:1;
+}
+.consent .opt-note{font-size:11.5px;color:var(--gray);padding-top:4px;}
+.agree-item{border-top:1px solid var(--line);padding:12px 0 4px;}
+.agree-item:first-child{border-top:none;}
+.agree-head{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;text-align:left;}
+.agree-title{font-size:13.5px;font-weight:700;line-height:1.4;flex:1;}
+.agree-title b.req{color:var(--red);} .agree-title b.sel{color:var(--gray);font-weight:600;white-space:nowrap;}
+.agree-arr{color:var(--gray);font-size:18px;flex:none;width:22px;text-align:center;flex-shrink:0;}
+.agree-detail{max-height:0;overflow:hidden;transition:max-height .25s ease;background:var(--soft-bg);border-radius:10px;margin-top:0;}
+.agree-detail.open{max-height:420px;overflow-y:auto;margin-top:10px;padding:12px 14px;}
+.agree-intro{font-size:11px;color:var(--gray);margin-bottom:8px;}
+.agree-sec{margin-bottom:9px;} .agree-sec h5{font-size:11.5px;font-weight:700;color:#333;margin-bottom:3px;}
+.agree-sec p{font-size:11px;color:#666;line-height:1.55;}
+.yn-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;}
+.yn-row.main{border-top:1px dashed var(--line);margin-top:6px;}
+.yn-q{font-size:12.5px;color:#333;flex:1;line-height:1.45;font-weight:500;}
+.yn{display:flex;gap:6px;flex:none;}
+.yn-opt{display:flex;align-items:center;gap:4px;font-size:12.5px;border:1.5px solid var(--line);border-radius:8px;padding:6px 11px;cursor:pointer;color:var(--gray);transition:.12s;}
+.yn-opt input{display:none;}
+.yn-opt:has(input:checked){border-color:var(--red);background:var(--red-a10);color:var(--red);font-weight:700;}
+
+@media all and (max-width: 960px) {
+  .btn3 {width: calc(100% - 40px);}
+}
+
+@media all and (max-width: 480px) {
+  br.mo{display: block;}
+  .section .content {padding: 30px 45px; gap: 12px;}
+  .section01 .content .mb.mb-1 {font-size: 14px; line-height: 22px;}
+  .section .content h1{ line-height: 36px;}
+  .section01 .txt1 {font-size: 22px; line-height: 30px;}
+  .section01 .txt1 span.txtBox {padding: 2px 10px; border-radius: 6px; }
+  .section01 .txt2 {padding: 0 12px; font-size: 8px; line-height: 12px;}
+  
+  .section.section02 .content {gap: 12px;}
+  .section02 .mb-3 {gap: 8px; padding: 16px; height: 100px;}
+  .section02 .mb-3 > div > p:first-child {font-size: 18px; line-height: 24px;}
+  .section02 .mb-3 > div > p:last-child {font-size: 12px; line-height: 18px;}
+  .section02 .reviews {gap: 12px; }
+  .section02 .txt2 {padding: 0 12px; font-size: 8px; line-height: 12px;}
+  
+  .section03 .text-body {font-size: 14px; line-height: 22px;}
+  .section03 .btn2{width: 100%;}
+  .section03 .content > div:last-child .mt-12 > div > p {font-size: 12px; line-height: 18px;}
+  .section03 .content > div:last-child > span { padding: 0 12px; font-size: 8px; line-height: 12px;}
+  .btn3{font-size: 20px; line-height: 24px; padding: 20px 0;}
+  
+  .formSection .step01 {padding: 90px 35px 0;}
+  .formSection .step01 .content > span {font-size: 8px; line-height: 12px;}
+  
+  .formSection .step .content {gap: 18px;}
+  .formSection .step02 { display: none; padding: 90px 35px 0; }
+  .formSection .step02 .content .progress {gap: 18px;}
+  .formSection .step02 .content .progress h2 {font-size: 24px; line-height: 30px;}
+  .formSection .step02 .content .p1 .region { flex-direction: column; align-items: start; }
+  .formSection .step02 .content .p1 .region select { flex: initial; width: 100%; }
+  
+  .formSection .step02 .content .option-list{gap: 18px;}
+  .formSection .step02 .content .option-list li label { padding: 18px 20px;}
+
+  .formSection .step02:has(.p5.active){padding: 220px 35px 0;}
+  .formSection .step02 .content .p5 .top{top: -80px;}
+  .formSection .step02 .content .p5 .top span{font-size: 8px; line-height: 14px; padding: 0 12px;}
+  .formSection .step02 .content .p5 .allCheck p{font-size: 12px; line-height: 16px; width: 100%;}
+  .formSection .step02 .content .p5 dl.agreeItem .agreement{flex-wrap: nowrap;}
+  .formSection .step02 .content .p5 dl.agreeItem dt .checkBox{flex-wrap: nowrap;}
+  .formSection .step02 .content .p5 .agreeItem label{font-size: 18px; line-height: 20px; flex: 1;}
+}
+
+@media all and (max-width: 320px) {
+  .section .content {padding: 30px 10px; gap: 12px;}
+  .section02 .mb-3 > div > p:first-child {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .section02 .mb-3 > div > p:last-child {
+    font-size: 10px;
+    line-height: 18px;
+  }
+  .formSection .step01 {
+    padding: 90px 10px 0;
+  }
+  .formSection .step02 {
+    padding: 90px 10px 0;
+  }
+  .formSection .step02:has(.p5.active){padding: 220px 10px 0;}
+}
+
+/*1920 이미지에 컨텐츠 1000px 이면 maxwidth 1000으로*/
+@media screen and (max-width: 720px) {
+} /*# sourceMappingURL=style.css.map */

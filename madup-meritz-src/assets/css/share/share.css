@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.floatingShare {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9998;
+}
+
+.floatingBtn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-size: 28px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.25s;
+}
+
+/* ✅ 카카오톡 버튼 */
+.floatingBtn.kakao {
+  background-color: #fee500;
+  background-image: url("https://developers.kakao.com/assets/img/about/logos/kakaotalk-symbol.png");
+}
+
+/* ✅ 링크 복사 버튼 */
+.floatingBtn.link {
+  background-color: #333;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/60/60990.png");
+  background-size: 24px;
+}
+
+.floatingBtn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}/*# sourceMappingURL=share.css.map */

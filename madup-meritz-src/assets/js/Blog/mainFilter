@@ -1,0 +1,286 @@
+<style>
+	.voluto-main-container .category-filter{
+		 display: none;
+	}
+	
+    @media (max-width: 768px) {
+      .voluto-main-container .category-filter {
+        display: flex;
+        margin-bottom: 20px;
+		    padding-bottom:10px;
+        gap: 18px;
+		    overflow:auto;
+      }
+      .category-filter button {
+        color: #afafaf;
+        font-family: Pretendard;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.733px;
+        text-transform: uppercase;
+        transition: all 0.2s;
+        background-color: transparent;
+        padding: 0;
+      }
+      .category-filter button.active {
+        color: #201c1c;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .voluto-main-container {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .voluto-main-container.loaded {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .row .post-cats {
+        margin: 0px !important;
+      }
+      .row .post-cats a {
+        background: unset !important;
+        color: #535353 !important;
+        padding: 5px 0px 0px !important;
+      }
+      .row .posted-on:before {
+        display: none !important;
+      }
+      .row .byline {
+        display: none !important;
+      }
+      .row .entry-meta .avatar {
+        display: none !important;
+      }
+      .row .entry-meta .post-data-text {
+        padding-left: 0 !important;
+      }
+      .row .entry-title {
+        margin: 0 !important;
+      }
+      .entry-header {
+        margin: 0 !important;
+      }
+      /* 컨텐츠 그리드를 리스트 형태로 변경 */
+      .posts-loop .row,
+      .content-grid,
+      article {
+        padding: 10px 0 !important;
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+        position: relative !important;
+      }
+      /* 전체를 감싸는 wrapper 추가 */
+      .posts-loop .row::before,
+      .row::before,
+      .content-grid::before {
+        content: "" !important;
+        display: block !important;
+      }
+      /* 썸네일 래퍼 */
+      .posts-loop .row .post-thumbnail-wrapper,
+      .row .post-thumbnail-wrapper,
+      .post-thumbnail-wrapper {
+        position: absolute !important;
+        right: 0 !important;
+        top: 0 !important;
+        flex-shrink: 0 !important;
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0 !important;
+      }
+      /* 썸네일 이미지 */
+      .posts-loop .row .post-thumbnail,
+      .posts-loop .row .post-thumbnail img,
+      .row .post-thumbnail,
+      .row .post-thumbnail img,
+      .post-thumbnail,
+      .post-thumbnail img {
+        width: 100px !important;
+        height: 100px !important;
+        border-radius: 8px !important;
+        object-fit: cover !important;
+        display: block !important;
+      }
+      /* 카테고리 */
+      .posts-loop .row .post-cats {
+        margin: 0 0 6px 0 !important;
+        padding-right: 110px !important;
+      }
+      .posts-loop .row .cat-links a {
+        font-size: 12px !important;
+        color: #666 !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+      }
+      /* 제목 */
+      .posts-loop .row .entry-header,
+      .posts-loop .row .post-header,
+      .row .entry-header,
+      .row .post-header,
+      .content-grid .entry-header,
+      .post-header {
+        margin: 0 0 8px 0 !important;
+        padding-right: 110px !important;
+      }
+      .posts-loop .row .entry-title {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        margin: 0 !important;
+        font-weight: 600 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+      .posts-loop .row .entry-title a {
+        color: #000 !important;
+        text-decoration: none !important;
+      }
+      /* 메타 정보 */
+      .posts-loop .row .entry-meta,
+      .row .entry-meta,
+      .content-grid .entry-meta {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding-right: 110px !important;
+      }
+      .posts-loop .row .avatar,
+      .content-grid .row .avatar,
+      .content-grid .avatar {
+        display: none !important;
+      }
+      .posts-loop .row .post-data-text,
+      .row .post-data-text,
+      .post-data-text {
+        display: flex !important;
+        gap: 4px !important;
+        font-size: 12px !important;
+        color: #999 !important;
+      }
+      .posts-loop .row .entry-date,
+      .row .entry-date,
+      .entry-date {
+        font-size: 12px !important;
+      }
+      /* 신청하기 버튼이 있을 경우 숨김 */
+      .meritz-apply-button,
+      button[class*="apply"],
+      a[class*="apply"] {
+        display: none !important;
+      }
+      /* 컨테이너 조정 */
+      .blog-posts,
+      .posts-container,
+      main {
+        padding: 0 16px !important;
+      }
+    }
+    /* 아주 작은 모바일 (320px 이하) */
+    @media (max-width: 375px) {
+      .posts-loop .row .post-thumbnail-wrapper {
+        width: 80px !important;
+        height: 80px !important;
+      }
+      .posts-loop .row .post-thumbnail,
+      .posts-loop .row .post-thumbnail img {
+        width: 80px !important;
+        height: 80px !important;
+      }
+      .posts-loop .row .entry-title {
+        font-size: 14px !important;
+      }
+    }
+  </style>
+  <!-- ----------------------------- -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".category-filter button");
+      if (!buttons || !buttons.length) return;
+
+      let currentCatId =
+        new URL(window.location.href).searchParams.get("cat_id") || 0;
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          buttons.forEach((b) => b.classList.remove("active"));
+            this.classList.add("active");
+
+            const catId = this.dataset.cat;
+            currentCatId = catId;
+
+            const url = new URL(window.location.href);
+
+            let cleanPath = url.pathname.replace(/\/page\/\d+\//, "/");
+            url.pathname = cleanPath;
+
+            // cat_id 설정
+            url.searchParams.set("cat_id", catId);
+            url.searchParams.delete("paged");
+
+            window.location.href = url.toString();
+        });
+      });
+
+      // 페이지네이션 클릭 시에도 cat_id 유지
+      document.addEventListener("click", function (e) {
+        const link = e.target.closest(".nav-links a");
+        if (!link) return;
+
+        e.preventDefault();
+        const url = new URL(link.href);
+        const catFromUrl = new URL(window.location.href).searchParams.get(
+          "cat_id"
+        );
+        if (catFromUrl) url.searchParams.set("cat_id", catFromUrl);
+        window.location.href = url.toString();
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const primary = document.querySelector(".voluto-main-container");
+      if (!primary) return;
+      // 초기 숨김
+      primary.style.opacity = "0";
+      primary.style.visibility = "hidden";
+      // 핵심 이미지 (썸네일)
+      const images = primary.querySelectorAll(".post-thumbnail img");
+      let loadedCount = 0;
+      function showContainer() {
+        primary.style.transition = "opacity 0.4s ease-in-out";
+        primary.style.visibility = "visible";
+        primary.style.opacity = "1";
+      }
+      if (images.length === 0) {
+        showContainer();
+        // 이미지 없으면 바로 표시
+        return;
+      }
+      // 이미지 로드 이벤트
+      images.forEach((img) => {
+        if (img.complete) loadedCount++;
+        else {
+          img.addEventListener("load", () => {
+            loadedCount++;
+            checkAll();
+          });
+          img.addEventListener("error", () => {
+            loadedCount++;
+            checkAll();
+          });
+        }
+      });
+      function checkAll() {
+        if (loadedCount === images.length) showContainer();
+      }
+      // 0.5초 후 강제 표시
+      setTimeout(showContainer, 500);
+    });
+  </script>

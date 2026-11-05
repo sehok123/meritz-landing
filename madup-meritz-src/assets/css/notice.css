@@ -1,0 +1,207 @@
+.noticeWrapper {
+  padding: 60px 0;
+}
+.noticeWrapper.withFixed {
+  padding: 60px 0 160px 0;
+}
+.noticeWrapper .is_mo {
+  display: none;
+}
+.noticeWrapper .noticeCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.noticeWrapper .tit {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.noticeWrapper table {
+  border: 1px solid #cbcbcb;
+}
+.noticeWrapper table tbody th {
+  width: 150px;
+  color: #222;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: #ebebeb;
+  border-bottom: 1px solid #cbcbcb;
+  border-right: 1px solid #cbcbcb;
+}
+.noticeWrapper table tbody td {
+  padding: 8px 10px;
+}
+.noticeWrapper table tbody td.border {
+  border-bottom: 1px solid #cbcbcb;
+}
+.noticeWrapper table tbody td .dot {
+  position: relative;
+  padding-left: 8px;
+  color: #222;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  text-align: left;
+}
+.noticeWrapper table tbody td .dot.sm {
+  font-size: 10px;
+  line-height: 13px; /* 130% */
+  letter-spacing: -0.8px;
+}
+.noticeWrapper table tbody td .dot::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #111;
+}
+.noticeWrapper table tbody td.sub {
+  width: 100px;
+  color: #222;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.24px;
+  background: #f9f9f9;
+  border-right: 1px solid #cbcbcb;
+  text-align: center;
+  border-bottom: 1px solid #cbcbcb;
+}
+.noticeWrapper table tbody td.bg {
+  color: #222;
+  font-family: Pretendard;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 180% */
+  background: #f9f9f9;
+  text-align: left;
+  border-bottom: 1px solid #cbcbcb;
+}
+.noticeWrapper table tbody td.footer {
+  text-align: center;
+  color: #222;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+}
+.noticeWrapper table tbody td.footer .dot {
+  display: inline-block;
+}
+.noticeWrapper table tbody td.footer.white {
+  background: #242628;
+  color: #fff;
+  font-weight: 700;
+}
+.noticeWrapper .infoText {
+  margin-top: 20px;
+  color: #888;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+}
+.noticeWrapper.cta {
+  padding-bottom: 160px;
+}
+.footer.withNotice {
+  padding: 40px 32px;
+}
+
+@media screen and (max-width: 640px) {
+  .noticeWrapper {
+    padding: 30px 16px;
+  }
+  .noticeWrapper.withFixed {
+    padding: 30px 16px 120px 16px;
+  }
+  .noticeWrapper .is_pc {
+    display: none;
+  }
+  .noticeWrapper .is_mo {
+    display: block;
+  }
+  .noticeWrapper .noticeCont .tit {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+  }
+  .noticeWrapper table tbody th {
+    width: 62px;
+    font-size: 12px;
+  }
+  .noticeWrapper table tbody td {
+    padding: 4px 6px;
+  }
+  .noticeWrapper table tbody td .dot {
+    padding-left: 6px;
+    color: #222;
+    font-family: Pretendard;
+    font-size: 10px;
+    line-height: 14px; /* 150% */
+  }
+  .noticeWrapper table tbody td .dot.sm {
+    font-size: 9px;
+    line-height: 13px; /* 130% */
+  }
+  .noticeWrapper table tbody td .dot::after {
+    top: 5px;
+    width: 2px;
+    height: 2px;
+  }
+  .noticeWrapper table tbody td.sub {
+    width: 50px;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    background: #f9f9f9;
+    border-right: 1px solid #cbcbcb;
+    text-align: center;
+  }
+  .noticeWrapper table tbody td.bg {
+    color: #222;
+    font-family: Pretendard;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px; /* 180% */
+    background: #f9f9f9;
+  }
+  .noticeWrapper .infoText {
+    margin-top: 10px;
+    font-size: 9px;
+    line-height: 14px; /* 133.333% */
+  }
+  .noticeWrapper.cta {
+    padding-bottom: 120px;
+  }
+
+  .footer.withNotice {
+    padding: 30px 0;
+  }
+} /*# sourceMappingURL=notice.css.map */

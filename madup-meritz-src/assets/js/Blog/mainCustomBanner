@@ -1,0 +1,88 @@
+<style>
+  /*메인홈페이지 띠배너커스텀*/
+  .custom-banner {
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 1110px;
+    margin: 20px auto 55px;
+    height: auto;
+    border-radius: 10px;
+  }
+  .custom-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  @media (max-width: 768px) {
+    .custom-banner {
+      margin-top: 0;
+      margin-bottom: 30px;
+      width: calc(100% - 30px);
+    }
+    .voluto-main-container {
+      margin-top: 30px;
+    }
+  }
+  @media (max-width: 576px) {
+    .custom-banner {
+      width: calc(100% - 30px);
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const path = window.location.pathname;
+    const lastSegment = path.split("/").filter(Boolean).pop(); // 마지막 경로
+    var articles = document.querySelectorAll(".row > article");
+    if (!articles || articles.length === 0 || lastSegment !== "blog") return;
+    var firstBanner = null;
+    var secondBanner = null;
+    function isMobile() {
+      return window.innerWidth <= 575;
+    }
+    function getBannerImage(index) {
+      if (index === 1) {
+        return isMobile()
+          ? "https://meritzpartners.com/blog/wp-content/uploads/2025/09/830x200_homebanner_mobile_1.png"
+          : "https://meritzpartners.com/blog/wp-content/uploads/2025/09/1110x100_homebanner_pc_1.png";
+      } else if (index === 2) {
+        return isMobile()
+          ? "https://meritzpartners.com/blog/wp-content/uploads/2025/09/830x200_homebanner_mobile_2.png"
+          : "https://meritzpartners.com/blog/wp-content/uploads/2025/09/1110x100_homebanner_pc_2.png";
+      }
+      return "";
+    }
+    if (articles.length > 0) {
+      // 첫 번째 배너 삽입
+      firstBanner = document.createElement("div");
+      firstBanner.className = "custom-banner main_banner-top";
+      firstBanner.innerHTML =
+        '<a href="https://example.com" class="main-banner-top post-banner-button" target="_blank"><img src="' +
+        getBannerImage(1) +
+        '" alt="배너"></a>';
+      articles[0].before(firstBanner);
+    }
+    if (articles.length >= 6) {
+      // 두 번째 배너 삽입
+      secondBanner = document.createElement("div");
+      secondBanner.className = "custom-banner main_banner-bottom";
+      secondBanner.innerHTML =
+        '<a href="https://example.com" target="_blank" class="main-banner-middle post-banner-button"><img src="' +
+        getBannerImage(2) +
+        '" alt="배너"></a>';
+      articles[5].after(secondBanner);
+    }
+    // 리사이즈 시 이미지 변경
+    window.addEventListener("resize", function () {
+      if (firstBanner) {
+        var img1 = firstBanner.querySelector("img");
+        if (img1) img1.src = getBannerImage(1);
+      }
+      if (secondBanner) {
+        var img2 = secondBanner.querySelector("img");
+        if (img2) img2.src = getBannerImage(2);
+      }
+    });
+  });
+</script>
