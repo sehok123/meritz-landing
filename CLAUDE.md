@@ -14,6 +14,10 @@
 3. **단일 HTML 파일로 만들지 않는다.** 인라인 CSS/JS, base64 이미지, 자체 폼 전송 코드가 들어간 단일 파일은 개발팀이 퍼블리싱할 수 없다.
    - 개발팀 설명: "AI로 만든 PNG를 받아 디자인 원본 파일을 고쳐 달라는 것과 같다."
 4. 출처는 개발팀이 준 `메드업 메리츠 랜딩 샘플.zip`이고, https://meritzpartners.com/BC261028/ 에 적용된 파일이다. 추출본이 `madup-meritz-src/`다.
+5. **다른 곳에서 만든 단일 HTML을 받아 매드업 구조로 바꾸거나 개발팀 전달용 zip을 만들 때**는 `.claude/skills/madup-publish/SKILL.md`(madup-publish 스킬) 순서를 따른다. 도구는 `tools/`에 있다:
+   - `extract-assets.mjs`: 원본 분석, 이미지를 파일로 빼기
+   - `check-campaign.mjs`: 규칙 점검. FAIL 0이어야 전달할 수 있다.
+   - `serve-8080.mjs`: 8080 미리보기
 
 ## 캠페인 폴더 구조 (BC261028 기준)
 ```

@@ -30,12 +30,36 @@ Claude Code로 **메리츠파트너스 DB 신청(상담 신청서) 랜딩**을 �
    실행한 뒤 `http://localhost:8080/캠페인폴더/` 를 엽니다.
 5. **개발팀 전달**: 캠페인 폴더를 zip으로 묶어 보냅니다. 폴더 안 `README.md`(개발팀 전달 메모)가 함께 들어가야 합니다.
 
+## 다른 곳에서 만든 HTML을 매드업 구조로 바꾸기 (어느 PC에서나 같은 과정)
+
+다른 Claude나 Claude Code에서 만든 단일 HTML 랜딩(이미지가 안에 들어간 파일)을 개발팀 전달용 BC 폴더와 zip으로 바꾸는 과정을 **스킬**로 만들어 두었습니다.
+
+1. 그 PC에 이 저장소를 받아 둡니다 (git clone). Node.js가 필요합니다. 없으면 Claude가 설치를 안내합니다.
+2. Claude Code에서 이 저장소 폴더를 열고, HTML 파일을 첨부해 이렇게 요청합니다.
+   ```
+   이 HTML을 매드업 구조로 퍼블리싱해서 개발팀 전달용 zip으로 뽑아줘. 캠페인 코드는 BC○○○○○○
+   ```
+3. Claude가 `.claude/skills/madup-publish/SKILL.md` 순서대로 진행합니다:
+   1. 원본 분석: 이미지를 파일로 빼기
+   2. BC 폴더 만들기
+   3. DB폼을 공통 `save()`에 연결
+   4. 자동 점검
+   5. 8080 미리보기 확인
+   6. README 작성과 zip 만들기
+
+| 도구 | 하는 일 |
+|---|---|
+| `node tools/extract-assets.mjs <원본.html> <출력폴더>` | base64 이미지를 파일로 빼고, 섹션·폼 항목·팝업·전송 코드를 요약 |
+| `node tools/check-campaign.mjs madup-meritz-src/<코드>` | 개발팀 규칙 자동 점검: base64·인라인 스타일, 공통 CSS/JS 순서, save()가 읽는 id, 자체 전송 코드, 추적 코드, 없는 파일 참조, assets·main 변경 여부 |
+| `node tools/serve-8080.mjs` | 안전한 미리보기. 127.0.0.1:8080 고정이고, 다른 포트에서는 운영 서버로 접수됨 |
+
 ## 폴더 구조
 
 ```
 CLAUDE.md                     Claude Code 작업 규칙 (역할, 매드업 구조 규칙, 디자인 선호)
 README.md                     이 문서
 docs/작업기록-2026-11.md      이번 작업의 대화 정리 (결정 사항, 개발팀 피드백, 남은 일)
+crawl/                        보험·부업 DB 랜딩 데일리 크롤링 (매일 9시 10개, daily/날짜.md)
 madup-meritz-src/
   assets/  main/              매드업 공통 파일. 절대 수정 금지 (영상 파일은 저장소에서 제외)
   BC261028/                   매드업이 준 참고 캠페인 (단계형 폼)
