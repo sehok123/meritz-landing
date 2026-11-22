@@ -160,3 +160,5 @@ https://leadfine-recruit.netlify.app/
 http://agent-recruiting.custominsur.workers.dev/
 https://heypick.vercel.app/metarichrecruitment
 https://recruit.nicecompany.co.kr/
+# 2026-11-22 데일리
+https://allcademy-live.netlify.app/
