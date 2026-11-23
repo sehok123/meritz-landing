@@ -162,3 +162,4 @@ https://heypick.vercel.app/metarichrecruitment
 https://recruit.nicecompany.co.kr/
 # 2026-11-22 데일리
 https://allcademy-live.netlify.app/
+# 2026-11-23 데일리 (기록 0개)
